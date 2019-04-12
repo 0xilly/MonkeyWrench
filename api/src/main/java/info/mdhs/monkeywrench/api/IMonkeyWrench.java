@@ -8,14 +8,9 @@
 
 package info.mdhs.monkeywrench.api;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import info.mdhs.monkeywrench.api.wrench.IWrenchRegistry;
 
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
-public @interface MonkeyWrench
+public interface IMonkeyWrench
 {
-    Class value();
+    IWrenchRegistry getWrenchRegistry();
 }

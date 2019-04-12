@@ -6,12 +6,11 @@
  *
  */
 
-package info.mdhs.monkeywrench.exception;
+package info.mdhs.monkeywrench.api.wrench;
 
-public class NoWrenchException extends Exception
+public interface IWrench
 {
-    public NoWrenchException(String message)
-    {
-        super(message);
-    }
+    Class getWrench();
+
+    Class getTarget();
 }

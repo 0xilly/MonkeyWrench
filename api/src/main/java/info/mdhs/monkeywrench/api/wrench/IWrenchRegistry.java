@@ -6,12 +6,13 @@
  *
  */
 
-package info.mdhs.monkeywrench.exception;
+package info.mdhs.monkeywrench.api.wrench;
 
-public class NoWrenchException extends Exception
+import java.util.Set;
+
+public interface IWrenchRegistry
 {
-    public NoWrenchException(String message)
-    {
-        super(message);
-    }
+    Set<IWrench> getWrenchRegistry();
+
+    void registerWrench(IWrench wrench);
 }
