@@ -1,0 +1,5 @@
+.idea
+.gradle
+out
+api/build
+agent/build
