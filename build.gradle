@@ -3,6 +3,9 @@ subprojects {
     group 'info.mdhs.monkeywrench'
     version '1.0-SNAPSHOT'
 
+    sourceCompatibility = 11
+    targetCompatibility = 11
+
     repositories {
         mavenCentral()
     }
@@ -12,14 +15,27 @@ subprojects {
     }
 }
 
-project(':agent') {
-    archivesBaseName = 'MonkeyWrenchAgent'
+project(':common') {
 
-    sourceCompatibility = 11
     dependencies {
         implementation project(':api')
-        implementation 'org.javassist:javassist:3.24.1-GA'
-        testImplementation 'org.mockito:mockito-core:2.7.22'
     }
 }
+
+project(':javassist') {
+
+    dependencies {
+        implementation project(':common')
+    }
+}
+
+//project(':agent') {
+//    archivesBaseName = 'MonkeyWrenchAgent'
+//
+//    dependencies {
+//        implementation project(':api')
+//        implementation 'org.javassist:javassist:3.24.1-GA'
+//        testImplementation 'org.mockito:mockito-core:2.7.22'
+//    }
+//}
 
